@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,66 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
+            double num1, num2,vysledek;
+            string a, b,operace ;
+            Console.WriteLine("kalkulajda");
+            a = Console.ReadLine();
+            b = Console.ReadLine();
+            operace=Console.ReadLine();
+
+            num1 = Convert.ToDouble(a);
+            num2 = Convert.ToDouble(b);
+            
+         if (operace=="+")
+            {
+                vysledek = num1 + num2;
+               
+
+            }
+            else if (operace=="-")
+            {
+                vysledek=num1 - num2;
+                
+
+
+            }
+            else if (operace=="*") { 
+              vysledek=-num1 * num2;
+                 
+            
+            }
+         else if (operace=="/") {
+            vysledek=(double)num1 / num2;
+                
+                if (num2 == 0)
+                    Console.WriteLine("nedel 0 ty trubko");
+
+
+        }
+         if (num1>num2)
+                {
+
+
+            }
+            Console.WriteLine(vysledek);
+        
+            
+
+                     
+                    
+                    
+
+
+
+
+
+
+
+
+
+
+
+
             /*
              * Pokud se budes chtit na neco zeptat a zrovna budu pomahat jinde, zkus se zeptat ChatGPT ;) - https://chat.openai.com/
              * 
