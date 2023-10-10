@@ -17,24 +17,24 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            double num1, num2, vysledek=0;
-            string a, b  ;
-            string? operace;
-            bool error=false;
+            double num1, num2, vysledek=0; // zadefinovat integrovanou hodnotu nula, když např dělíme nulou vyjde nula
+            string a, b, operace  ;
+            
+            bool error=false; // zadefinujeme si error datový typ jako bool true/false
             Console.WriteLine("kalkulajda");
 
             Console.WriteLine("zadej 1. číslo:");
             a = Console.ReadLine();
 
 
-            while (true)
+            while (true)  
             {
                 Console.WriteLine("zadej jednu z možností: + - * /");
                 operace = Console.ReadLine();
-                Console.WriteLine(operace);
+              
 
-                if (operace == "+"||operace=="-"||operace=="*"||operace=="/")
-                    break;
+                if (operace == "+"||operace=="-"||operace=="*"||operace=="/") // || je nebo, , rovná se + ano/ne...  jde dál
+                    break;     // ukončení cyklu, když pravda operace = jedna z možností
 
             }
 
@@ -73,10 +73,10 @@ namespace Calculator
                 case "/":
 
 
-                    if (num2 == 0)
+                    if (num2 == 0)   // nemůžem dělit nulou
                     {
                         Console.WriteLine("neděl nulou ty trubko!");
-                    error = true;
+                    error = true;    // pokud je error true dostaneme error message, pokud jde na else a dostaneme vysledek
                     }
                     else
                         vysledek = num1 / num2; 
@@ -86,7 +86,7 @@ namespace Calculator
 
                
             }
-            if (error == false)
+            if (error == false)  // error nebyl true, tudíž je false podmínka splněna dostaneme výsledek
                 Console.WriteLine("Result: " + vysledek.ToString());
 
 

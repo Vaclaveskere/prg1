@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ntzfYMUsNiEgRg3YLVhHG04IE0yT7uOqhvK/Y2U7/DcXjzbLC1cr62uTehIcHLCBLF+NT4y00MRCwaoQ5/rDdQ==",
+  "dgSpecHash": "RK/pgHuFlRsfy9qFGSw1xULL3brA0ozXfziBsc65sMHnEl7UraBPahQSZYFfZaIfktrvupf8z1Nn2zhjwObKWQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Vasicek\\Desktop\\Calculator\\Calculator.csproj",
+  "projectFilePath": "C:\\Users\\Vasicek\\Desktop\\kalkulačka\\Calculator\\Calculator.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
