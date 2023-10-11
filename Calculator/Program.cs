@@ -29,41 +29,62 @@ namespace Calculator
          if (operace=="+")
             {
                 vysledek = num1 + num2;
-               
+                Console.WriteLine(vysledek);
 
             }
             else if (operace=="-")
             {
                 vysledek=num1 - num2;
-                
+                Console.WriteLine(vysledek);
 
 
             }
             else if (operace=="*") { 
               vysledek=-num1 * num2;
-                 
-            
+                Console.WriteLine(vysledek);
+
             }
          else if (operace=="/") {
             vysledek=(double)num1 / num2;
-                
+                Console.WriteLine(vysledek);
+
                 if (num2 == 0)
                     Console.WriteLine("nedel 0 ty trubko");
-
-
-        }
-         if (num1>num2)
-                {
-
+               
 
             }
-            Console.WriteLine(vysledek);
-        
-            
+         if (num1>num2)
+                {
+                Console.WriteLine("1 číslo je větší jak druhý");
 
-                     
-                    
-                    
+            }
+
+            Console.WriteLine("kvadraticka rovnice ");
+            double x1, x2, vysledek1;
+            string c, d,e, operace1;
+            Console.WriteLine("zadej");
+            c = Console.ReadLine();
+            d = Console.ReadLine();
+            e = Console.ReadLine();
+            operace1 = Console.ReadLine();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
