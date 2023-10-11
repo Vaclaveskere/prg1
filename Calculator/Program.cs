@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 /*
@@ -17,82 +19,187 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            double num1, num2, vysledek=0; // zadefinovat integrovanou hodnotu nula, když např dělíme nulou vyjde nula
-            string a, b, operace  ;
-            
-            bool error=false; // zadefinujeme si error datový typ jako bool true/false
+            double vysledek = 0,mocnina; // zadefinovat integrovanou hodnotu nula, když např dělíme nulou vyjde nula 
+            string a, b, operace, číslo, mocnitel;
+
+            bool error = false; // zadefinujeme si error datový typ jako bool true/false
             Console.WriteLine("kalkulajda");
 
-            Console.WriteLine("zadej 1. číslo:");
-            a = Console.ReadLine();
 
 
-            while (true)  
+
+
+
+
+            while (true)
             {
-                Console.WriteLine("zadej jednu z možností: + - * /");
-                operace = Console.ReadLine();
-              
 
-                if (operace == "+"||operace=="-"||operace=="*"||operace=="/") // || je nebo, , rovná se + ano/ne...  jde dál
-                    break;     // ukončení cyklu, když pravda operace = jedna z možností
+                Console.WriteLine(" Menu:");
+                Console.WriteLine("1. Aritmetické počty");
+                Console.WriteLine("2. Factorial");
+                Console.WriteLine("3. Mocniny");
+                Console.WriteLine("4. Exit");
 
-            }
+                Console.Write("Enter (1/2/3/4): ");
+                string choice = Console.ReadLine();
 
-
-
-            Console.WriteLine("zadej 2. číslo:");
-            b = Console.ReadLine();
-
+                switch (choice)
+                {
 
 
-          
+                    case "1":
+
+                            Console.WriteLine("Zadej 1. číslo:");
+                            a = Console.ReadLine();
+
+                        if (!double.TryParse(a, out double num1))  // místo integeru jsem to hodil rovnou do doublu (přišlo mi to jako míň práce)
+
+                        {
+                            Console.WriteLine("Neplatné číslo. Zadejte platné číslo.");
+                            continue;
+                        }
+                            
+                    
 
 
-            num1 = Convert.ToDouble(a);
-            num2 = Convert.ToDouble(b);
-
-            switch (operace)
-
-
-
-            {
-             
-
-                case "+":
-                    vysledek = num1 + num2;
-                   
-                    break;
-                case "-":
-                    vysledek = num1 - num2;
-                   
-                    break;
-                case "*":
-                    vysledek = num1 * num2;
-                  
-                    break;
-                case "/":
-
-
-                    if (num2 == 0)   // nemůžem dělit nulou
+                    while (true)
                     {
-                        Console.WriteLine("neděl nulou ty trubko!");
-                    error = true;    // pokud je error true dostaneme error message, pokud jde na else a dostaneme vysledek
-                    }
-                    else
-                        vysledek = num1 / num2; 
+                        Console.WriteLine("zadej jednu z možností: + - * /");
+                        operace = Console.ReadLine();
 
+
+                        if (operace == "+" || operace == "-" || operace == "*" || operace == "/") // || je nebo, , rovná se + ano/ne...  jde dál
+                            break;     // ukončení cyklu, když pravda operace = jedna z možností
+
+                    }
+
+
+
+                    Console.WriteLine("Zadej 2. číslo:");
+                    b = Console.ReadLine();
+
+                    if (!double.TryParse(b, out double num2))
+                    {
+                        Console.WriteLine("Neplatné číslo. Zadejte platné číslo.");
+                        continue;
+                    }
+
+
+
+                    switch (operace)
+                    {
+
+
+                        case "+":
+                            vysledek = num1 + num2;
+
+                            break;
+                        case "-":
+                            vysledek = num1 - num2;
+
+                            break;
+                        case "*":
+                            vysledek = num1 * num2;
+
+                            break;
+                        case "/":
+
+
+                            if (num2 == 0)   // nemůžem dělit nulou
+                            {
+                                Console.WriteLine("neděl nulou ty trubko!");
+                                error = true;    // pokud je error true dostaneme error message, pokud jde na else a dostaneme vysledek
+                            }
+                            else
+                                vysledek = num1 / num2;
+
+
+                            break;
+
+
+                    }
+                    if (error == false)  // error nebyl true, tudíž je false podmínka splněna dostaneme výsledek
+                    {
+                        Console.WriteLine("Result: " + vysledek.ToString());
+
+                    }
+
+                    break;
+
+
+                case "2":
+                    Console.WriteLine("vypočet faktorialu");
+                    int n = int.Parse(Console.ReadLine());
+                    int factorial = Factorial(n);
+
+                    Console.WriteLine($"Pro cislo {n} je faktorial {factorial} ");
+
+                    break;
+
+
+                case "3":
+                        Console.WriteLine("Zadej číslo: ¨");
+                        číslo = Console.ReadLine();
+
+                        if (!double.TryParse(číslo, out double num3)) 
+                        {
+                            Console.WriteLine("Neplatné číslo. Zadejte platné číslo.");
+                            continue;
+                        }
+
+
+
+
+                        Console.WriteLine("zadej mocnitel: ");
+                        mocnitel = Console.ReadLine();
+                        if (!double.TryParse(mocnitel, out double num4))  
+
+                        {
+                            Console.WriteLine("Neplatné číslo. Zadejte platné číslo.");
+                            continue;
+                        }
+
+                       
+
+                        mocnina = Math.Pow(num3,num4); 
+                        Console.WriteLine("Result: " + mocnina.ToString());
 
                         break;
 
-               
-            }
-            if (error == false)  // error nebyl true, tudíž je false podmínka splněna dostaneme výsledek
-                Console.WriteLine("Result: " + vysledek.ToString());
+                case "4":
+                    Environment.Exit(0);
+                    break;
+                }
+                static int Factorial(int n)
+                {
 
+                    if (n == 1)
+
+                    {
+                        return 1;
+
+                    }
+                    int nFactorial = n * Factorial(n - 1);
+                    return nFactorial;
+
+                }
 
             
-           
-           
+
+
+
+                    Console.Write("Přejete si pokračovat (ano/ne): ");
+                    string response = Console.ReadLine();
+
+                    if (response.ToLower() != "ano")  //Tolower všechno hodí na malý písmenka,pokud podmínka splněna ukončení programu jinak se opakije while cyklus
+                    {
+                        break; // ukončí kalkulačku
+                    }
+
+
+
+
+                
 
 
 
@@ -105,32 +212,8 @@ namespace Calculator
 
 
 
-
-            /*
-             * Pokud se budes chtit na neco zeptat a zrovna budu pomahat jinde, zkus se zeptat ChatGPT ;) - https://chat.openai.com/
-             * 
-             * ZADANI
-             * Vytvor program ktery bude fungovat jako kalkulacka. Kroky programu budou nasledujici:
-             * 1) Nacte vstup pro prvni cislo od uzivatele (vyuzijte metodu Console.ReadLine() - https://learn.microsoft.com/en-us/dotnet/api/system.console.readline?view=netframework-4.8.
-             * 2) Zkonvertuje vstup od uzivatele ze stringu do integeru - https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number.
-             * 3) Nacte vstup pro druhe cislo od uzivatele a zkonvertuje ho do integeru. (zopakovani kroku 1 a 2 pro druhe cislo)
-             * 4) Nacte vstup pro ciselnou operaci. Rozmysli si, jak operace nazves. Muze to byt "soucet", "rozdil" atd. nebo napr "+", "-", nebo jakkoliv jinak.
-             * 5) Nadefinuj integerovou promennou result a prirad ji prozatimne hodnotu 0.
-             * 6) Vytvor podminky (if statement), podle kterych urcis, co se bude s cisly dit podle zadane operace
-             *    a proved danou operaci - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/selection-statements.
-             * 7) Vypis promennou result do konzole
-             * 
-             * Mozna rozsireni programu pro rychliky / na doma (na poradi nezalezi):
-             * 1) Vypis do konzole pred nactenim kazdeho uzivatelova vstupu co po nem chces
-             * 2) a) Kontroluj, ze uzivatel do vstupu zadal, co mel (cisla, popr. ciselnou operaci). Pokud zadal neco jineho, napis mu, co ma priste zadat a program ukoncete.
-             * 2) b) To same, co a) ale misto ukonceni programu opakovane cti vstup, dokud uzivatel nezada to, co ma
-             *       - https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements#the-while-statement
-             * 3) Umozni uzivateli zadavat i desetinna cisla, tedy prekopej kalkulacku tak, aby umela pracovat s floaty
-             */
-
-            //Tento komentar smaz a misto nej zacni psat svuj prdacky kod.
-
-            Console.ReadKey(); //Toto nech jako posledni radek, aby se program neukoncil ihned, ale cekal na stisk klavesy od uzivatele.
+                Console.ReadKey(); 
+            }
         }
     }
 }
