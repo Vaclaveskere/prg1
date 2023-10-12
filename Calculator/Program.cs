@@ -8,10 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-/*
- * Made by Jan Borecky for PRG seminar at Gymnazium Voderadska, year 2023-2024.
- * Extended by students.
- */
+
 
 namespace Calculator
 {
@@ -24,10 +21,6 @@ namespace Calculator
 
             bool error = false; // zadefinujeme si error datový typ jako bool true/false
             Console.WriteLine("kalkulajda");
-
-
-
-
 
 
 
@@ -148,8 +141,6 @@ namespace Calculator
                         }
 
 
-
-
                         Console.WriteLine("zadej mocnitel: ");
                         mocnitel = Console.ReadLine();
                         if (!double.TryParse(mocnitel, out double num4))  
@@ -165,6 +156,7 @@ namespace Calculator
                         Console.WriteLine("Result: " + mocnina.ToString());
 
                         break;
+
 
                 case "4":
                     Environment.Exit(0);
@@ -187,7 +179,6 @@ namespace Calculator
             
 
 
-
                     Console.Write("Přejete si pokračovat (ano/ne): ");
                     string response = Console.ReadLine();
 
@@ -195,23 +186,11 @@ namespace Calculator
                     {
                         break; // ukončí kalkulačku
                     }
+                    
 
 
 
-
-                
-
-
-
-
-
-
-
-
-
-
-
-
+              
                 Console.ReadKey(); 
             }
         }
