@@ -49,27 +49,43 @@ namespace SearchPlayground
 
 
             int Firstnumber = 0;
+           
             int lastnumber = array.Length - 1;
-            int inbetweennumber = (Firstnumber + lastnumber)/2;
+            
             while (lastnumber >= Firstnumber)
 
-                if(inbetweennumber == elementToSearch)
-                    return inbetweennumber;
-            else if(inbetweennumber > elementToSearch)
-
-                        
+            {
+                
+                int inbetweennumber = (Firstnumber - lastnumber) / 2;
 
 
-
-
-                return array[inbetweennumber];
+                if (array[inbetweennumber] == elementToSearch)
+                {
+                return inbetweennumber;
+                }
+                if (array[inbetweennumber] < elementToSearch)
+                {
+                Firstnumber = inbetweennumber + 1;               
+                }
+                else
+                {
+                lastnumber = inbetweennumber - 1;
+                }
                 
                 
-
-
-
+            }
 
             return -1;
+
+
+
+
+
+
+
+
+
+
         }
 
         static int BinarySearchRecursive(int[] array, int elementToSearch, int lower, int upper)
