@@ -1,0 +1,20 @@
+C:\Users\Vasicek\Desktop\PAINT FINAL\bin\Debug\PAINT FINAL.exe.config
+C:\Users\Vasicek\Desktop\PAINT FINAL\bin\Debug\PAINT FINAL.exe
+C:\Users\Vasicek\Desktop\PAINT FINAL\bin\Debug\PAINT FINAL.pdb
+C:\Users\Vasicek\Desktop\PAINT FINAL\obj\Debug\PAINT FINAL.csproj.AssemblyReference.cache
+C:\Users\Vasicek\Desktop\PAINT FINAL\obj\Debug\PAINT_FINAL.Form1.resources
+C:\Users\Vasicek\Desktop\PAINT FINAL\obj\Debug\PAINT_FINAL.Properties.Resources.resources
+C:\Users\Vasicek\Desktop\PAINT FINAL\obj\Debug\PAINT FINAL.csproj.GenerateResource.cache
+C:\Users\Vasicek\Desktop\PAINT FINAL\obj\Debug\PAINT FINAL.csproj.CoreCompileInputs.cache
+C:\Users\Vasicek\Desktop\PAINT FINAL\obj\Debug\PAINT FINAL.exe
+C:\Users\Vasicek\Desktop\PAINT FINAL\obj\Debug\PAINT FINAL.pdb
+C:\Users\Vasicek\Desktop\Nová složka (2)\bin\Debug\PAINT FINAL.exe.config
+C:\Users\Vasicek\Desktop\Nová složka (2)\bin\Debug\PAINT FINAL.exe
+C:\Users\Vasicek\Desktop\Nová složka (2)\bin\Debug\PAINT FINAL.pdb
+C:\Users\Vasicek\Desktop\Nová složka (2)\obj\Debug\PAINT FINAL.csproj.AssemblyReference.cache
+C:\Users\Vasicek\Desktop\Nová složka (2)\obj\Debug\PAINT_FINAL.Form1.resources
+C:\Users\Vasicek\Desktop\Nová složka (2)\obj\Debug\PAINT_FINAL.Properties.Resources.resources
+C:\Users\Vasicek\Desktop\Nová složka (2)\obj\Debug\PAINT FINAL.csproj.GenerateResource.cache
+C:\Users\Vasicek\Desktop\Nová složka (2)\obj\Debug\PAINT FINAL.csproj.CoreCompileInputs.cache
+C:\Users\Vasicek\Desktop\Nová složka (2)\obj\Debug\PAINT FINAL.exe
+C:\Users\Vasicek\Desktop\Nová složka (2)\obj\Debug\PAINT FINAL.pdb
